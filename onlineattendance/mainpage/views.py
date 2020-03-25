@@ -2,4 +2,15 @@ from django.shortcuts import render
 
 # Create your views here.
 def mainPage(request):
-    return render(request, 'main.html')
+    if request.method == 'GET':
+        try:
+            if request.GET['Register']:
+                return render(request, 'registration.html')
+        except:
+            pass
+        try:
+            if request.GET['Login']:
+                return render(request, 'login.html')
+        except:
+            pass
+        return render(request, 'main.html')
