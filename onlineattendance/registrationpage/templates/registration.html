@@ -15,9 +15,9 @@
     </div>
 </div>
 <hr>
-<div>
-    <form action="#" method="post">
-        <div class="textbox">
+    <div class="textbox">
+    <form action="" method="post">
+        {% csrf_token %}
         <lable>First Name:</lable>
         <input type="text" name="First Name"><br>
         <lable>Middle Name:</lable>
@@ -31,15 +31,12 @@
         <lable>Username:</lable>
         <input type="text" name="Username"><br>
         <lable>Password:</lable>
-        <input type="Password" name="First Name"><br>
+        <input type="Password" name="Password"><br>
         <lable>Confirm Password:</lable>
         <input type="Password" name="Confirm Password"><br>
-        <div class="textbox1">
-        <input type="button" value="submit">
-        </div>
-        </div>
+        <input type="submit" name="submit" value="submit">
     </form>
-</div>
+    </div>
 <hr>
 <div>
     <div class="author2">
