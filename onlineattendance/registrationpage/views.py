@@ -1,17 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
 from .models import Users
 
 def registrationPage(request):
     if request.method == "POST":
-        credentialDict = dict(request.POST)
-        del credentialDict['csrfmiddlewaretoken']
-        del credentialDict['Confirm Password']
-        del credentialDict['submit']
-
         try:
-            usr = Users(**credentialDict)
+            usr = Users()
+            usr.first_name = request.POST['first_name']
+            usr.middle_name = request.POST['middle_name']
+            usr.last_name = request.POST['last_name']
+            usr.contact = request.POST['contact']
+            usr.address = request.POST['address']
+            usr.username = request.POST['username']
+            usr.email = request.POST['email']
+            usr.password = request.POST['password']
             usr.save()
         except Exception as ex:
             context = {'response': str(ex)}
