@@ -15,23 +15,26 @@
     </div>
 </div>
 <hr>
+<h4>{{ response }}</h4>
     <div class="textbox">
     <form action="" method="post">
         {% csrf_token %}
         <lable>First Name:</lable>
-        <input type="text" name="First Name"><br>
+        <input type="text" name="first_name"><br>
         <lable>Middle Name:</lable>
-        <input type="text" name="Middle Name"><br>
+        <input type="text" name="middle_name"><br>
         <lable>Last Name:</lable>
-        <input type="text" name="Last Name"><br>
+        <input type="text" name="last_name"><br>
         <lable>Contact:</lable>
         <input type="text" name="contact"><br>
         <lable>Address:</lable>
-        <input type="text" name="Address"><br>
+        <input type="text" name="address"><br>
         <lable>Username:</lable>
-        <input type="text" name="Username"><br>
+        <input type="text" name="username"><br>
+        <lable>Email:</lable>
+        <input type="text" name="email"><br>
         <lable>Password:</lable>
-        <input type="Password" name="Password"><br>
+        <input type="Password" name="password"><br>
         <lable>Confirm Password:</lable>
         <input type="Password" name="Confirm Password"><br>
         <input type="submit" name="submit" value="submit">

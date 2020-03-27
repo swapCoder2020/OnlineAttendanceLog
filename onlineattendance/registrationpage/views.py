@@ -5,7 +5,16 @@ from .models import Users
 
 def registrationPage(request):
     if request.method == "POST":
-        temp = Users(**{'first_name':'chinmay', 'middle_name':'rajan', 'last_name':'gharat'
-                        ,'contact':7507511126, 'address':'avasasda asdad', 'username':'chinu', 'email':'c@c.com', 'password':'qwerty1234'})
-        temp.save()
+        credentialDict = dict(request.POST)
+        del credentialDict['csrfmiddlewaretoken']
+        del credentialDict['Confirm Password']
+        del credentialDict['submit']
+
+        try:
+            usr = Users(**credentialDict)
+            usr.save()
+        except Exception as ex:
+            context = {'response': str(ex)}
+            return render(request, 'registration.html', context)
+
     return render(request, 'registration.html')
