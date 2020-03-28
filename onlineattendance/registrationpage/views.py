@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Users
+from django.contrib.auth.models import User
 
 def registrationPage(request):
     if request.method == "POST":
@@ -14,6 +15,9 @@ def registrationPage(request):
             usr.username = request.POST['username']
             usr.email = request.POST['email']
             usr.password = request.POST['password']
+            auth_usr = User(**{'username': request.POST['username'], 'email': request.POST['email'],
+                               'password': request.POST['password']})
+            auth_usr.save()
             usr.save()
         except Exception as ex:
             context = {'response': str(ex)}
