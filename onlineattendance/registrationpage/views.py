@@ -18,12 +18,11 @@ def registrationPage(request):
             auth_usr = User(**{'username': request.POST['username'],
                                'email': request.POST['email'],
                                'password': request.POST['password'],
-                               'first_name' : request.POST['first_name'],
+                               'first_name': request.POST['first_name'],
                                'last_name': request.POST['last_name']})
             auth_usr.save()
             usr.save()
         except Exception as ex:
             context = {'response': str(ex)}
             return render(request, 'registration.html', context)
-
     return render(request, 'registration.html')
