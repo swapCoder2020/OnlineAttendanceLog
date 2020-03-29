@@ -16,15 +16,16 @@
 </div>
 <hr>
 <div>
-    <form action="#" method="post">
+    <form action=" " method="post">
+        {% csrf_token %}
 	<div class="textbox">
         <label>Username:</label>
         <input type="text" name="username"><br>
         <label>Password:</label>
         <input type="password"name="password"><br>
         <div class="textbox1">
-        <input type="button" value="Submit">
-        <input type="button" value="Reset">
+            <input type="submit" name="Submit" value="Submit">
+            <input type="submit" name="Reset" value="Reset">
         </div>
 	</div>
     </form>
