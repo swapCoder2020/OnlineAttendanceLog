@@ -13,4 +13,8 @@ def mainPage(request):
                 return redirect('loginPage')
         except:
             pass
-        return render(request, 'main.html')
+        if request.user.id:
+            context = {'username': request.user.username}
+        else:
+            context = {'username': ''}
+        return render(request, 'main.html', context)
