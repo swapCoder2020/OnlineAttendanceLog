@@ -8,3 +8,7 @@ def loginPage(request):
             auth.login(request, user_ok)
         return redirect('/')
     return render(request, 'login.html')
+
+def logoutPage(request):
+    auth.logout(request)
+    return redirect('/')
