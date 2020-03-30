@@ -17,9 +17,9 @@ def registrationPage(request):
             usr.password = request.POST['password']
             auth_usr = User(**{'username': request.POST['username'],
                                'email': request.POST['email'],
-                               'password': request.POST['password'],
                                'first_name': request.POST['first_name'],
                                'last_name': request.POST['last_name']})
+            auth_usr.set_password(request.POST['password'])
             auth_usr.save()
             usr.save()
         except Exception as ex:
