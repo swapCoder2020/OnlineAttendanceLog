@@ -1,33 +1,27 @@
-body{
-	background:#333;
-    }
-
 .menubar{
-	width:20%;
-	font-size:20px;
-	padding:10px;
-	margin:10px 0;
-	background-color:red;
-	margin:10px auto;
-	position:absolute;
-	left:900px;
-    }
-.menubar1{
-    width:20%;
-	font-size:20px;
-	padding:10px;
-	margin:10px 0;
-	background-color:red;
-	margin:10px auto;
-	position:absolute;
-	left:900px;
-
-    }
+	font-size:1.2em;
+	padding-left: 70vw;
+}
+.menulink{
+	margin-left: 0.5vw;
+	margin-right: 0.5vw;
+	color: #333333;
+	font-weight: bold;
+	text-decoration: none;
+}
+.hline{
+	height: 0.5vh;
+	border-style: solid;
+	background-color: #777;
+	border-color: #777;
+}
+.middsection{
+	margin-bottom: 60vh;
+}
 .textbox{
 	padding:50px;
 	font-size:20px;
 	text-align: center;
-
     }
 .textbox1{
     width:10%;
